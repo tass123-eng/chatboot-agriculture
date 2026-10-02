@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163f2d">
+  <title>AgriAI | Assistant cultures</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">+</span>
+        <div>
+          <strong>AgriAI</strong>
+          <span>Assistant cultures</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="eyebrow">Votre espace</span>
+        <div class="status-row"><span class="status-dot"></span> RAG opérationnel</div>
+      </div>
+
+      <div class="focus-note">
+        <span class="note-icon">i</span>
+        <div>
+          <strong>Base de connaissances</strong>
+          <p>Les réponses sont appuyées par vos fiches maladies.</p>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <span>Version 0.1</span>
+        <a href="/docs" target="_blank" rel="noreferrer">API docs <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">Conseil agronomique</span>
+          <h1>Bonjour, on regarde vos cultures ?</h1>
+        </div>
+        <div class="topbar-badge"><span class="status-dot"></span> Assistant prêt</div>
+      </header>
+
+      <section class="chat-panel" aria-label="Conversation avec AgriAI">
+        <div id="messages" class="messages" aria-live="polite">
+          <article class="message assistant-message welcome-message">
+            <div class="avatar">A</div>
+            <div class="message-content">
+              <span class="message-label">AgriAI <time>maintenant</time></span>
+              <p>Bonjour ! Je peux vous aider à comprendre les symptômes, les causes, la prévention et les traitements présents dans votre base agricole.</p>
+              <div class="suggestions">
+                <button type="button" class="suggestion" data-crop="tomate" data-question="Quels sont les symptômes du mildiou de la tomate ?">Mildiou de la tomate</button>
+                <button type="button" class="suggestion" data-crop="pomme de terre" data-question="Comment prévenir les maladies de la pomme de terre ?">Prévention pomme de terre</button>
+                <button type="button" class="suggestion" data-crop="olivier" data-question="Quels sont les symptômes de l'œil de paon sur l'olivier ?">Olivier</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="error-message" class="error-message" role="alert" hidden></div>
+
+        <form id="chat-form" class="composer">
+          <div class="composer-controls">
+            <label for="crop">Culture</label>
+            <select id="crop" name="crop">
+              <option value="">Toutes les cultures</option>
+              <option value="tomate">Tomate</option>
+              <option value="pomme de terre">Pomme de terre</option>
+              <option value="olivier">Olivier</option>
+              <option value="concombre">Concombre</option>
+              <option value="vigne">Vigne</option>
+            </select>
+            <label class="upload-control" for="image-input">
+              <span aria-hidden="true">+</span> Ajouter une image
+              <input id="image-input" type="file" accept="image/jpeg,image/png,image/webp">
+            </label>
+          </div>
+          <div id="image-preview" class="image-preview" hidden>
+            <img id="preview-image" alt="Aperçu de l'image sélectionnée">
+            <div class="image-preview-info">
+              <strong id="image-name"></strong>
+              <span id="image-status">Image prête à être envoyée</span>
+            </div>
+            <button id="analyze-image" class="analyze-image" type="button">Analyser</button>
+            <button id="remove-image" class="remove-image" type="button" aria-label="Retirer l'image" title="Retirer l'image">×</button>
+          </div>
+          <div class="input-row">
+            <textarea id="question" name="question" rows="1" placeholder="Décrivez votre problème ou posez une question..." required></textarea>
+            <button class="send-button" type="submit" aria-label="Envoyer la question" title="Envoyer la question">
+              <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="composer-hint"><span>Entrée pour envoyer</span><span>Réponse fondée sur vos documents</span></div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

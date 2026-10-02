@@ -1,0 +1,38 @@
+[
+  {
+    "question": "Quels sont les symptomes du mildiou de la tomate ?",
+    "crop": "tomate",
+    "expected_source": "tomate_mildiou.md",
+    "keywords": ["taches", "feuilles", "humide"]
+  },
+  {
+    "question": "Comment prevenir l'alternariose sur la tomate ?",
+    "crop": "tomate",
+    "expected_source": "tomate_alternariose.md",
+    "keywords": ["rotation", "paillage", "feuilles"]
+  },
+  {
+    "question": "Quels traitements sont mentionnes pour le mildiou de la pomme de terre ?",
+    "crop": "pomme de terre",
+    "expected_source": "pomme_terre_mildiou.md",
+    "keywords": ["cuivre", "fongicide"]
+  },
+  {
+    "question": "Quels sont les symptomes de l'oeil de paon sur l'olivier ?",
+    "crop": "olivier",
+    "expected_source": "olivier_oeil_paon.md",
+    "keywords": ["taches", "feuilles"]
+  },
+  {
+    "question": "Comment reconnaitre et limiter l'oidium du concombre ?",
+    "crop": "concombre",
+    "expected_source": "concombre_oidium.md",
+    "keywords": ["blanc", "aerer"]
+  },
+  {
+    "question": "Quelles conditions favorisent le mildiou de la vigne ?",
+    "crop": "vigne",
+    "expected_source": "vigne_mildiou.md",
+    "keywords": ["pluies", "humidite"]
+  }
+]
