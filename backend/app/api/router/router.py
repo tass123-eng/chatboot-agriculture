@@ -3,7 +3,7 @@ from fastapi import APIRouter
 # Feature routers
 # Import them here as you create them.
 #
-# from app.routes.auth import router as auth_router
+from app.routes.auth import router as auth_router
 # from app.routes.dashboard import router as dashboard_router
 # from app.routes.farms import router as farms_router
 # from app.routes.sensors import router as sensors_router
@@ -31,11 +31,11 @@ api_router = APIRouter()
 # Uncomment these as the corresponding routers
 # are implemented.
 #
-# api_router.include_router(
-#     auth_router,
-#     prefix="/auth",
-#     tags=["Authentication"],
-# )
+api_router.include_router(
+    auth_router,
+    prefix="/auth",
+    tags=["Authentication"],
+)
 #
 # api_router.include_router(
 #     dashboard_router,

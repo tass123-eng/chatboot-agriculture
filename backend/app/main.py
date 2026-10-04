@@ -1,8 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.router import api_router
+from app.api.router.router import api_router
+from app.core.database import Base, engine
+import app.models.usersModel  # 1. Import model so SQLAlchemy detects the table schema
 
+# 2. Trigger table creation in PostgreSQL
+Base.metadata.create_all(bind=engine)
 
 # --------------------------------------------------
 # Application
